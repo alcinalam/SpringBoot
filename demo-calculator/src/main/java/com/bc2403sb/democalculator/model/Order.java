@@ -1,6 +1,7 @@
 package com.bc2403sb.democalculator.model;
 
 import java.util.HashMap;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,8 +9,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Database {
-   public final static HashMap<String,Integer> map = new HashMap<>();
-   private String name;
-   private int age;
+public class Order {
+private int id;
+private Address address;  
+ 
+
+  
 }

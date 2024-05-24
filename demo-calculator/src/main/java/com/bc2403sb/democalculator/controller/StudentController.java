@@ -59,14 +59,14 @@ public class StudentController {
  }
  
 @GetMapping(value = "/students/names")
-public List<String> getStudentName(){
-  if (Student.studentDB == null)
-    return null;
+public List<String> getStudentName(@RequestParam(required = false)String name){
   return Student.studentDB.stream()//
     .map(e -> e.getName())//
     .collect(Collectors.toList());
+  }
+
+  
 }
 
 
 
-}
