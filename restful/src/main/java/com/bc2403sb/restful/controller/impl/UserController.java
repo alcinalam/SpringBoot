@@ -33,13 +33,13 @@ public class UserController implements UserOperation{
     return userService.save(user);
   }
 
-  // @Override
-  // public UserEntity deleteUser(Long id) {
-  //   return userService.deleteById(id);
-  // }
+  @Override
+  public UserEntity deleteUser(Long id) {
+    return userService.deleteById(id);
+  }
 
-  // @Override
-  // public UserEntity updateUserEmailById(Long id, UserReqDTO userReqDTO) {
-  //   return userService.updateEmailById(id, userReqDTO);
-  // }
+  @Override
+  public UserEntity updateUserEmailById(Long id, UserReqDTO userReqDTO) {
+    return userService.updateEmailById(id, userReqDTO);
+  }
 }

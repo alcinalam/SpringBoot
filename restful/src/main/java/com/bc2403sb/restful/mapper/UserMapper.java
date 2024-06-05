@@ -4,13 +4,12 @@ import org.springframework.stereotype.Component;
 import com.bc2403sb.restful.dto.respDto.UserDTO;
 import com.bc2403sb.restful.dto.respDto.UserDTO.AddressDTO;
 import com.bc2403sb.restful.dto.respDto.UserDTO.AddressDTO.LocationDTO;
+import com.bc2403sb.restful.model.dto.User;
 import com.bc2403sb.restful.dto.respDto.UserDTO.CompanyDTO;
-import com.bc2403sb.restful.model.User;
 
 @Component
 public class UserMapper {
-
-
+  
   public UserDTO map(User user) {
     LocationDTO locationDTO = LocationDTO.builder() //
         .latitude(user.getAddress().getGeo().getLatitude())

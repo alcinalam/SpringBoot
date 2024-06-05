@@ -1,11 +1,11 @@
-package com.bc2403sb.restful.model;
+package com.bc2403sb.restful.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
 public class User {
-  
+
   private int id;
   private String name;
   private String username;
