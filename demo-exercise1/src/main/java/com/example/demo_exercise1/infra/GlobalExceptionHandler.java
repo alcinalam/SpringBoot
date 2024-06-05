@@ -3,7 +3,9 @@ package com.example.demo_exercise1.infra;
 
 import java.io.IOException;
 import java.util.ConcurrentModificationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import lombok.Getter;
 
 // @RestControllerAdvice // @ ControllerAdvice + ResponseBody
@@ -12,6 +14,7 @@ public class GlobalExceptionHandler {
   // if itis caught, call this java method, it passes the input parameter as well.
 
   @ExceptionHandler(NumberFormatException.class) //catch
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse NumberFormatHandler(NumberFormatException e) {
     return new ErrorResponse(ErrorCode.NFE.getCode(), ErrorCode.NFE.getDesc());
   }
@@ -19,62 +22,74 @@ public class GlobalExceptionHandler {
   // RunTimeException = NullPointerException
   // I/O Exception
 
-  @ExceptionHandler(IllegalArgumentException.class) 
+  @ExceptionHandler(IllegalArgumentException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST) 
   public ErrorResponse IllegalArgumentExceptionHandler(IllegalArgumentException e) {
     return new ErrorResponse(ErrorCode.IAE.getCode(), ErrorCode.IAE.getDesc());
   }
 
-  @ExceptionHandler(ArithmeticException.class) 
+  @ExceptionHandler(ArithmeticException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST) 
   public ErrorResponse ArithmeticExceptionHandler(ArithmeticException e) {
     return new ErrorResponse(ErrorCode.AE.getCode(),ErrorCode.AE.getDesc());
   }
 
   @ExceptionHandler(ArrayIndexOutOfBoundsException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(ArrayIndexOutOfBoundsException e) {
     return new ErrorResponse(ErrorCode.IAE.getCode(), ErrorCode.IAE.getDesc());
   }
 
   @ExceptionHandler(NullPointerException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(NullPointerException e) {
     return new ErrorResponse(ErrorCode.NPE.getCode(), ErrorCode.NFE.getDesc());
   }
 
   @ExceptionHandler(StringIndexOutOfBoundsException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(StringIndexOutOfBoundsException e) {
     return new ErrorResponse(ErrorCode.SIOOB.getCode(), ErrorCode.SIOOB.getDesc());
   }
 
   @ExceptionHandler(IllegalStateException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(IllegalStateException e) {
     return new ErrorResponse(ErrorCode.ISE.getCode(), ErrorCode.ISE.getDesc());
   }
 
   @ExceptionHandler(ClassCastException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(ClassCastException e) {
     return new ErrorResponse(ErrorCode.CCE.getCode(), ErrorCode.CCE.getDesc());
   }
 
   @ExceptionHandler(IndexOutOfBoundsException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(IndexOutOfBoundsException e) {
     return new ErrorResponse(ErrorCode.IOOB.getCode(), ErrorCode.IOOB.getDesc());
   }
 
   @ExceptionHandler(SecurityException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(SecurityException e) {
     return new ErrorResponse(ErrorCode.SE.getCode(), ErrorCode.SE.getDesc());
   }
 
-  @ExceptionHandler(UnsupportedOperationException.class) 
+  @ExceptionHandler(UnsupportedOperationException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST) 
   public ErrorResponse notFoundExceptionHandler(UnsupportedOperationException e) {
     return new ErrorResponse(ErrorCode.UOE.getCode(), ErrorCode.UOE.getDesc());
   }
 
   @ExceptionHandler(ConcurrentModificationException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(ConcurrentModificationException e) {
     return new ErrorResponse(ErrorCode.CME.getCode(), ErrorCode.CME.getDesc());
   }
 
   @ExceptionHandler(IOException.class) 
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
   public ErrorResponse notFoundExceptionHandler(IOException e) {
     return new ErrorResponse(ErrorCode.IOE.getCode(), ErrorCode.IOE.getDesc());
   }

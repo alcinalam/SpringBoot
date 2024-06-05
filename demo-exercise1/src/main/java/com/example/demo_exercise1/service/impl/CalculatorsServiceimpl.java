@@ -33,7 +33,7 @@ public class CalculatorsServiceimpl implements CalculatorService {
 
   @Override
   public Double div(String x, String y)  {
-    if (Integer.parseInt(y) == 0){
+    if (Double.parseDouble(y) == 0){
       throw new ArithmeticException("Cannot divide by Zero");
     }
     return BigDecimal.valueOf(Double.valueOf(x))//
