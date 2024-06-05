@@ -39,23 +39,13 @@ public class CalculatorController implements CalculatorOperation {
     return calculatorDTO;
   }
 
-  // @Override
-  // public CalculatorDTO calPost(String x, String y,String op) {
+  @Override
+  public Calculator calPost(Calculator calculator) {
+    return new Calculator(calculator.getX(),calculator.getY(),calculator.getOp());
 
-  //   calculator.setX(x);
-  //   calculator.setY(y);
-  //   calculator.setOp(op);
-    
-  //   String result = calculatorService.getResult(x, y, op);
-    
-  //   CalculatorDTO calculatorDTO = calculatorMapper.mapToCalculatorDTO(calculator);
-  //   calculatorDTO.setResult(result);
-    
-  //   return calculatorDTO;
+  }
 
 
-
-  // }
 
   
 }
